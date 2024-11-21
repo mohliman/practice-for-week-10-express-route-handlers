@@ -23,9 +23,13 @@ const {
 
 const express = require('express');
 const app = express();
+app.use(express.json())
 
 // Your code here
-
+app.get('/artists',(req, res)=>{
+  const artists = getAllArtists()
+  res.json(artists)
+})
 // DO NOT MODIFY
 if (require.main === module) {
   const port = 8000;
