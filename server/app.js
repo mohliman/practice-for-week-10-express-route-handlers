@@ -30,6 +30,11 @@ app.get('/artists',(req, res)=>{
   const artists = getAllArtists()
   res.json(artists)
 })
+app.post('/artists',(req, res)=>{
+  const data = req.body
+  const artist = addArtist(data)
+  res.status(201).json(artist)
+})
 // DO NOT MODIFY
 if (require.main === module) {
   const port = 8000;
