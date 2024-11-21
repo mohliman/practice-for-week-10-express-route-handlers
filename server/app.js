@@ -35,6 +35,14 @@ app.post('/artists',(req, res)=>{
   const artist = addArtist(data)
   res.status(201).json(artist)
 })
+app.get('/artists/latest',(req, res)=>{
+  const artist = getLatestArtist()
+  res.json(artist)
+})
+app.get('/artists/latest/albums',(req, res)=>{
+  const artist = getAlbumsForLatestArtist()
+  res.json(artist)
+})
 // DO NOT MODIFY
 if (require.main === module) {
   const port = 8000;
